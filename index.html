@@ -4,50 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cover's Wave</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- GLightbox for image popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Cover's Wave</h1>
-        <p>Your Trusted Phone Case Store</p>
-    </header>
+<header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>Cover's Wave</h1>
+    <p>Your Trusted Phone Case Store</p>
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <section class="products">
-        <div class="card">
-            <img src="https://i.imgur.com/5b6hAqZ.png" alt="">
-            <h2>iPhone Premium Case</h2>
-            <p>Price: 350 Tk</p>
-            <button onclick="orderNow()">Order Now</button>
+<section id="products" class="products">
+    <!-- 10 Slots -->
+    <!-- Example slot 1 -->
+    <div class="product-slot" data-aos="fade-up">
+        <div class="product-slider">
+            <a href="images/product1-1.jpg" class="glightbox"><img src="images/product1-1.jpg" alt="Product 1 Image 1"></a>
+            <a href="images/product1-2.jpg" class="glightbox"><img src="images/product1-2.jpg" alt="Product 1 Image 2"></a>
+            <a href="images/product1-3.jpg" class="glightbox"><img src="images/product1-3.jpg" alt="Product 1 Image 3"></a>
+            <a href="images/product1-4.jpg" class="glightbox"><img src="images/product1-4.jpg" alt="Product 1 Image 4"></a>
         </div>
+        <h2>iPhone Case Glitter</h2>
+        <p>iPhone 13pro Max, 14pro Max, 15pro, 15pro Max, 16pro, 16pro Max, 17pro, 17pro Max.<p>
+        <p>Price: 850 Tk</p>
+        <button onclick="orderNow('iPhone Case Glitter', 850)">Order Now</button>
+    </div>
 
-        <div class="card">
-            <img src="https://i.imgur.com/tZKMbTH.png" alt="">
-            <h2>Samsung Stylish Case</h2>
-            <p>Price: 320 Tk</p>
-            <button onclick="orderNow()">Order Now</button>
+    <!-- Slot 2 -->
+    <div class="product-slot" data-aos="fade-up" data-aos-delay="100">
+        <div class="product-slider">
+            <a href="images/product2-1.jpg" class="glightbox"><img src="images/product2-1.jpg" alt="Product 2 Image 1"></a>
+            <a href="images/product2-2.jpg" class="glightbox"><img src="images/product2-2.jpg" alt="Product 2 Image 2"></a>
+            <a href="images/product2-3.jpg" class="glightbox"><img src="images/product2-3.jpg" alt="Product 2 Image 3"></a>
+            <a href="images/product2-4.jpg" class="glightbox"><img src="images/product2-4.jpg" alt="Product 2 Image 4"></a>
         </div>
-    </section>
+        <h2>17 pro max protective transparent case</h2>
+        <p>Only 17 pro Max & 17 pro.<p>
+        <p>Price: 899 Tk</p>
+        <button onclick="orderNow('17 pro max protective transparent case', 899)">Order Now</button>
+    </div>
+<!-- Slot 3 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="200">
+    <div class="product-slider">
+        <a href="images/product3-1.jpg" class="glightbox"><img src="images/product3-1.jpg" alt="Product 3 Image 1"></a>
+        <a href="images/product3-2.jpg" class="glightbox"><img src="images/product3-2.jpg" alt="Product 3 Image 2"></a>
+        <a href="images/product3-3.jpg" class="glightbox"><img src="images/product3-3.jpg" alt="Product 3 Image 3"></a>
+        <a href="images/product3-4.jpg" class="glightbox"><img src="images/product3-4.jpg" alt="Product 3 Image 4"></a>
+    </div>
+    <h2>iPhone Clear Case</h2>    
+    <p>iPhone 12pro Max, 13pro Max, 14, 14pro Max, 15pro, 15, 15+, 15pro Max, 16pro, 16pro Max, 17pro, 17, 17pro Max.<p>
+    <p>Price: 750 Tk</p>
+    <button onclick="orderNow('iPhone Clear Case', 750)">Order Now</button>
+</div>
 
-    <section class="contact">
-        <h2>📞 Contact Us</h2>
-        <p><strong>WhatsApp:</strong> 01960559745</p>
-        <p><strong>Hotline:</strong> 01410301618</p>
-        <p><strong>Support:</strong> 01851921618</p>
+<!-- Slot 4 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="300">
+    <div class="product-slider">
+        <a href="images/product4-1.jpg" class="glightbox"><img src="images/product4-1.jpg" alt="Product 4 Image 1"></a>
+        <a href="images/product4-2.jpg" class="glightbox"><img src="images/product4-2.jpg" alt="Product 4 Image 2"></a>
+        <a href="images/product4-3.jpg" class="glightbox"><img src="images/product4-3.jpg" alt="Product 4 Image 3"></a>
+        <a href="images/product4-4.jpg" class="glightbox"><img src="images/product4-4.jpg" alt="Product 4 Image 4"></a>
+    </div>
+    <h2>Premium Luxury Brush Case For IPhone</h2>
+    <p>iPhone 11-12 Pro Max 13-13 Pro -13 Pro Max 14-14 Pro -14 Pro Max 15-15 Pro -15 Pro Max 16-16 Pro -16 Pro Max Also 15 Plus /14 Plus.<p>
+    <p>Price: 890 Tk</p>
+    <button onclick="orderNow('Premium Luxury Brush Case For IPhone', 890)">Order Now</button>
+</div>
 
-        <h2>📍 Location</h2>
-        <p>Hatirpool, Motaleb Plaza, Dhaka-1205</p>
+<!-- Slot 5 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="400">
+    <div class="product-slider">
+        <a href="images/product5-1.jpg" class="glightbox"><img src="images/product5-1.jpg" alt="Product 5 Image 1"></a>
+        <a href="images/product5-2.jpg" class="glightbox"><img src="images/product5-2.jpg" alt="Product 5 Image 2"></a>
+        <a href="images/product5-3.jpg" class="glightbox"><img src="images/product5-3.jpg" alt="Product 5 Image 3"></a>
+        <a href="images/product5-4.jpg" class="glightbox"><img src="images/product5-4.jpg" alt="Product 5 Image 4"></a>
+    </div>
+    <h2>Auto Focus Chrome Glass Case</h2>
+    <p>11-12 Pro Max 13-13 Pro -13 Pro Max 14-14 Pro -14 Pro Max 15-15 Pro -15 Pro Max 16-16 Pro -16 Pro Max Also 15 Plus /14 Plus.<p>
+    <p>Price: 950 Tk</p>
+    <button onclick="orderNow('Auto Focus Chrome Glass Case', 950)">Order Now</button>
+</div>
 
-        <h2>💳 Payment Information</h2>
-        <p>Bkash: <strong>01851921618</strong></p>
-        <p>Nagad: <strong>01851921618</strong></p>
-        <p>Rocket: <strong>01851921618</strong></p>
-    </section>
+<!-- Slot 6 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="500">
+    <div class="product-slider">
+        <a href="images/product6-1.jpg" class="glightbox"><img src="images/product6-1.jpg" alt="Product 6 Image 1"></a>
+        <a href="images/product6-2.jpg" class="glightbox"><img src="images/product6-2.jpg" alt="Product 6 Image 2"></a>
+        <a href="images/product6-3.jpg" class="glightbox"><img src="images/product6-3.jpg" alt="Product 6 Image 3"></a>
+        <a href="images/product6-4.jpg" class="glightbox"><img src="images/product6-4.jpg" alt="Product 6 Image 4"></a>
+    </div>
+    <h2>Premium Case White Kick Stand</h2>
+    <p>Available Model 12-12 Pro -12 Pro Max13-13 Pro -13 Pro Max14-14 Pro -14 Pro Max15-15 Pro -15 Pro Max16 Pro -16 Pro Max17 Pro -17 Pro Max.</p>
+    <p>Price: 990 Tk</p>
+    <button onclick="orderNow('Premium Case White Kick Stand', 990)">Order Now</button>
+</div>
 
-    <footer>
-        <p>© 2025 Cover's Wave — All Rights Reserved.</p>
-    </footer>
+<!-- Slot 7 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="600">
+    <div class="product-slider">
+        <a href="images/product7-1.jpg" class="glightbox"><img src="images/product7-1.jpg" alt="Product 7 Image 1"></a>
+        <a href="images/product7-2.jpg" class="glightbox"><img src="images/product7-2.jpg" alt="Product 7 Image 2"></a>
+        <a href="images/product7-3.jpg" class="glightbox"><img src="images/product7-3.jpg" alt="Product 7 Image 3"></a>
+        <a href="images/product7-4.jpg" class="glightbox"><img src="images/product7-4.jpg" alt="Product 7 Image 4"></a>
+    </div>
+    <h2>Santa Barbara Polo</h2>
+    <p>12-12 Pro -12 Pro Max13-13 Pro -13 Pro Max14-14 Pro -14 Pro Max15-15 Pro -15 Pro Max16 Pro -16 Pro Max17 Pro -17 Pro Max.</p>
+    <p>Price: 1950 Tk</p>
+    <button onclick="orderNow('Santa Barbara Polo', 1950)">Order Now</button>
+</div>
 
-    <script src="script.js"></script>
+<!-- Slot 8 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="700">
+    <div class="product-slider">
+        <a href="images/product8-1.jpg" class="glightbox"><img src="images/product8-1.jpg" alt="Product 8 Image 1"></a>
+        <a href="images/product8-2.jpg" class="glightbox"><img src="images/product8-2.jpg" alt="Product 8 Image 2"></a>
+        <a href="images/product8-3.jpg" class="glightbox"><img src="images/product8-3.jpg" alt="Product 8 Image 3"></a>
+        <a href="images/product8-4.jpg" class="glightbox"><img src="images/product8-4.jpg" alt="Product 8 Image 4"></a>
+    </div>
+    <h2>Rhode Case For Ladies whit Lip Gloss</h2>
+    <p>12-12 Pro -12 Pro Max13-13 Pro -13 Pro Max14-14 Pro -14 Pro Max15-15 Pro -15 Pro Max16 Pro -16 Pro Max17 Pro -17 Pro Max.</p>
+    <p>Price: 1050 Tk</p>
+    <button onclick="orderNow('Rhode Case For Ladies whit Lip Gloss', 1050)">Order Now</button>
+</div>
+
+<!-- Slot 9 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="800">
+    <div class="product-slider">
+        <a href="images/product9-1.jpg" class="glightbox"><img src="images/product9-1.jpg" alt="Product 9 Image 1"></a>
+        <a href="images/product9-2.jpg" class="glightbox"><img src="images/product9-2.jpg" alt="Product 9 Image 2"></a>
+        <a href="images/product9-3.jpg" class="glightbox"><img src="images/product9-3.jpg" alt="Product 9 Image 3"></a>
+        <a href="images/product9-4.jpg" class="glightbox"><img src="images/product9-4.jpg" alt="Product 9 Image 4"></a>
+    </div>
+    <h2>santa Barbara Polo Horse case</h2>
+    <p>Available Model 12-12 Pro -12 Pro Max13-13 Pro -13 Pro Max14-14 Pro -14 Pro Max15-15 Pro -15 Pro Max16 Pro -16 Pro Max17 Pro -17 Pro Max.</p>
+    <p>Price: 990 Tk</p>
+    <button onclick="orderNow('santa Barbara Polo Horse case', 990)">Order Now</button>
+</div>
+
+<!-- Slot 10 -->
+<div class="product-slot" data-aos="fade-up" data-aos-delay="900">
+    <div class="product-slider">
+        <a href="images/product10-1.jpg" class="glightbox"><img src="images/product10-1.jpg" alt="Product 10 Image 1"></a>
+        <a href="images/product10-2.jpg" class="glightbox"><img src="images/product10-2.jpg" alt="Product 10 Image 2"></a>
+        <a href="images/product10-3.jpg" class="glightbox"><img src="images/product10-3.jpg" alt="Product 10 Image 3"></a>
+        <a href="images/product10-4.jpg" class="glightbox"><img src="images/product10-4.jpg" alt="Product 10 Image 4"></a>
+    </div>
+    <h2>Spider Case</h2>
+    <p>Available Model 12-12 Pro -12 Pro Max13-13 Pro -13 Pro Max14-14 Pro -14 Pro Max15-15 Pro -15 Pro Max16 Pro -16 Pro Max17 Pro -17 Pro Max.</p>
+    <p>Price: 690 Tk</p>
+    <button onclick="orderNow('Spider Case', 690)">Order Now</button>
+</div>
+    <!-- Add similar slots up to Product 10 (just change image names & product names) -->
+</section>
+
+<section id="contact" class="contact" data-aos="fade-up">
+    <h2>📞 Contact Us</h2>
+    <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: 01960559745</p>
+    <p><i class="fa-solid fa-phone"></i> Hotline: 01410301618</p>
+    <p><i class="fa-solid fa-headset"></i> Support: 01851921618</p>
+
+    <h2>📍 Location</h2>
+    <p>Hatirpool, Motaleb Plaza, Dhaka-1205</p>
+
+    <h2>💳 Payment Information</h2>
+    <p><i class="fa-solid fa-mobile-screen-button"></i> Bkash: 01851921618</p>
+    <p><i class="fa-solid fa-mobile-screen-button"></i> Nagad: 01851921618</p>
+    <p><i class="fa-solid fa-mobile-screen-button"></i> Rocket: 01851921618</p>
+</section>
+
+<footer>
+    <p>©️ 2025 Cover's Wave — All Rights Reserved.</p>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/01960559745" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="script.js"></script>
+<script>
+    AOS.init();
+    const lightbox = GLightbox({ selector: '.glightbox' });
+
+    // Auto slide for each product slot
+    const slots = document.querySelectorAll('.product-slot');
+    slots.forEach(slot => {
+        const images = slot.querySelectorAll('.product-slider a img');
+        let index = 0;
+        setInterval(() => {
+            images.forEach((img,i)=> img.style.display='none');
+            images[index].style.display='block';
+            index = (index+1) % images.length;
+        }, 3000);
+    });
+</script>
 </body>
 </html>
