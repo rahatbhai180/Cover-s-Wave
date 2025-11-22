@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover's Wave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cover's Wave</h1>
+        <p>Your Trusted Phone Case Store</p>
+    </header>
+
+    <section class="products">
+        <div class="card">
+            <img src="https://i.imgur.com/5b6hAqZ.png" alt="">
+            <h2>iPhone Premium Case</h2>
+            <p>Price: 350 Tk</p>
+            <button onclick="orderNow()">Order Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.imgur.com/tZKMbTH.png" alt="">
+            <h2>Samsung Stylish Case</h2>
+            <p>Price: 320 Tk</p>
+            <button onclick="orderNow()">Order Now</button>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>📞 Contact Us</h2>
+        <p><strong>WhatsApp:</strong> 01960559745</p>
+        <p><strong>Hotline:</strong> 01410301618</p>
+        <p><strong>Support:</strong> 01851921618</p>
+
+        <h2>📍 Location</h2>
+        <p>Hatirpool, Motaleb Plaza, Dhaka-1205</p>
+
+        <h2>💳 Payment Information</h2>
+        <p>Bkash: <strong>01851921618</strong></p>
+        <p>Nagad: <strong>01851921618</strong></p>
+        <p>Rocket: <strong>01851921618</strong></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Cover's Wave — All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
