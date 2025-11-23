@@ -8,8 +8,8 @@ body {
 
 header {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg,#ff416c,#ff4b2b);
+    padding: 30px 20px;
+    background: linear-gradient(135deg,#112b4c,#f53a19);
     color: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
