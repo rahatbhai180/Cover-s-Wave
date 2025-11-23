@@ -18,7 +18,7 @@ header .logo {
     width: 350px;  /*or 350px if you want bigger*/
 
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 header nav a {
