@@ -1,91 +1,153 @@
-body {
+/* ===== Reset & Base ===== */
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f7f7f7;
-    color: #333;
-    scroll-behavior: smooth;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Header ===== */
 header {
-    text-align: center;
-    padding: 15px 15px;
-    background: linear-gradient(135deg,#4077be,#ffffff);
-    color: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .logo {
-    width: 350px;  /*or 350px if you want bigger*/
-
-    height: auto;
-    margin-bottom: 10px;
+    width: 150px;
 }
 
 header nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
+    margin-left: 25px;
     font-weight: 600;
     transition: color 0.3s;
 }
 
-header nav a:hover { color: #000; }
+header nav a:hover {
+    color: #007BFF;
+}
 
+/* ===== Products Section ===== */
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 50px;
+    position: relative;
 }
 
 .product-slot {
-    width: 250px;
-    background: #fff;
-    border-radius: 15px;
+    background-color: #fff;
     padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.product-slider a img { 
-    width: 100%; 
-    border-radius: 15px; 
-    display: block; 
+.product-slot:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.product-slot img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.product-slot h2 { margin: 10px 0 5px; font-size: 1.2rem; }
-.product-slot p { margin-bottom: 10px; }
+.product-slot h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
 
-button {
-    padding: 10px 20px;
-    background: linear-gradient(135deg,#ff416c,#ff4b2b);
+.product-slot p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.product-slot button {
+    background-color: #007BFF;
     color: #fff;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:600;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-button:hover {
-    transform: scale(1.05);
-    box-shadow:0 5px 15px rgba(255,65,108,0.4);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
 }
 
-.contact { background:#fff; padding:30px 20px; margin:40px auto; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); max-width:800px; }
-.contact h2 { color:#ff416c; margin-top:20px; }
-.contact p { margin:5px 0; font-size:1rem; }
+.product-slot button:hover {
+    background-color: #0056b3;
+}
 
-footer { text-align:center; padding:20px; background:#000; color:#fff; margin-top:40px; font-size:0.9rem; }
+/* ===== Contact Section ===== */
+.contact {
+    background-color: #fff;
+    padding: 50px;
+    margin: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
 
+.contact h2 {
+    margin-bottom: 15px;
+    color: #007BFF;
+}
+
+.contact p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+
+/* ===== Floating WhatsApp Button ===== */
 .whatsapp-float {
-    position:fixed; bottom:20px; right:20px; background:#25d366; color:white; border-radius:50%; width:60px; height:60px;
-    text-align:center; font-size:30px; display:flex; align-items:center; justify-content:center; z-index:1000; transition: transform 0.3s;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 28px;
+    z-index: 1000;
+    transition: transform 0.3s;
 }
-.whatsapp-float:hover { transform: scale(1.2); }
 
-@media screen and (max-width:768px){
-    .products { flex-direction: column; align-items:center; }
-    header h1 { font-size:2rem; }
+.whatsapp-float:hover {
+    transform: scale(1.1);
 }
