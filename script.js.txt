@@ -1,23 +1,49 @@
-// Order Button Alert
-function orderNow(product, price) {
+$(document).ready(function() {
+
+    // Initialize Owl Carousel for each slider/thumb pair
+    $(".product-slot").each(function(index, element){
+        var sliderId = "#slider" + (index+1);
+        var thumbId = "#thumb" + (index+1);
+
+        var slider = $(sliderId);
+        var thumb = $(thumbId);
+        var slidesPerPage = 4;
+
+        slider.owlCarousel({
+            items:1,
+            nav:false,
+            dots:false,
+            loop:true
+        }).on('changed.owl.carousel', function(el){
+            var current = el.item.index;
+            thumb.find(".owl-item").removeClass("current").eq(current).addClass("current");
+        });
+
+        thumb.owlCarousel({
+            items: slidesPerPage,
+            dots:false,
+            nav:true,
+            slideBy: slidesPerPage
+        }).on('click', '.owl-item', function(e){
+            e.preventDefault();
+            var number = $(this).index();
+            slider.data('owl.carousel').to(number,300,true);
+        });
+    });
+
+    // Quantity buttons
+    $(".qtyminus").on("click",function(){
+        var now = $(this).siblings(".qty").val();
+        if($.isNumeric(now) && now>1){ $(this).siblings(".qty").val(parseInt(now)-1); }
+    });
+    $(".qtyplus").on("click",function(){
+        var now = $(this).siblings(".qty").val();
+        if($.isNumeric(now)){ $(this).siblings(".qty").val(parseInt(now)+1); }
+    });
+
+});
+
+// Order Now function
+function orderNow(product, price){
     alert(`আপনি "${product}" অর্ডার করতে চাইছেন।\nমূল্য: ${price} Tk\n\nঅর্ডার করতে Inbox/WhatsApp/Nagad number দিন!`);
 }
-
-// AOS init + GLightbox
-AOS.init();
-const lightbox = GLightbox({ selector: '.glightbox' });
-
-// Auto slide images for each product slot
-const slots = document.querySelectorAll('.product-slot');
-slots.forEach(slot => {
-    const images = slot.querySelectorAll('.product-slider a img');
-    let index = 0;
-    images.forEach(img => img.style.opacity = 0);
-    images[index].style.opacity = 1;
-
-    setInterval(() => {
-        images[index].style.opacity = 0;
-        index = (index + 1) % images.length;
-        images[index].style.opacity = 1;
-    }, 3000);
-});
