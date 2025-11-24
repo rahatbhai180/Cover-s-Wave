@@ -1,81 +1,86 @@
-$(document).ready(function() {
-        var slider = $("#slider");
-        var thumb = $("#thumb");
-        var slidesPerPage = 4; //globaly define number of elements per page
-        var syncedSecondary = true;
-        slider.owlCarousel({
-            items: 1,
-            slideSpeed: 2000,
-            nav: false,
-            autoplay: false, 
-            dots: false,
-            loop: true,
-            responsiveRefreshRate: 200
-        }).on('changed.owl.carousel', syncPosition);
-        thumb
-            .on('initialized.owl.carousel', function() {
-                thumb.find(".owl-item").eq(0).addClass("current");
-            })
-            .owlCarousel({
-                items: slidesPerPage,
-                dots: false,
-                nav: true,
-                item: 4,
-                smartSpeed: 200,
-                slideSpeed: 500,
-                slideBy: slidesPerPage, 
-              navText: ['<svg width="18px" height="18px" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="25px" height="25px" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
-                responsiveRefreshRate: 100
-            }).on('changed.owl.carousel', syncPosition2);
-        function syncPosition(el) {
-            var count = el.item.count - 1;
-            var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-            if (current < 0) {
-                current = count;
-            }
-            if (current > count) {
-                current = 0;
-            }
-            thumb
-                .find(".owl-item")
-                .removeClass("current")
-                .eq(current)
-                .addClass("current");
-            var onscreen = thumb.find('.owl-item.active').length - 1;
-            var start = thumb.find('.owl-item.active').first().index();
-            var end = thumb.find('.owl-item.active').last().index();
-            if (current > end) {
-                thumb.data('owl.carousel').to(current, 100, true);
-            }
-            if (current < start) {
-                thumb.data('owl.carousel').to(current - onscreen, 100, true);
-            }
-        }
-        function syncPosition2(el) {
-            if (syncedSecondary) {
-                var number = el.item.index;
-                slider.data('owl.carousel').to(number, 100, true);
-            }
-        }
-        thumb.on("click", ".owl-item", function(e) {
-            e.preventDefault();
-            var number = $(this).index();
-            slider.data('owl.carousel').to(number, 300, true);
-        });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover's Wave</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
+<header>
+    <img src="logo/logo.png" alt="Logo" class="logo">
+    <p>Your Trusted Phone Case Store</p>
+    <nav>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-            $(".qtyminus").on("click",function(){
-                var now = $(".qty").val();
-                if ($.isNumeric(now)){
-                    if (parseInt(now) -1> 0)
-                    { now--;}
-                    $(".qty").val(now);
-                }
-            })            
-            $(".qtyplus").on("click",function(){
-                var now = $(".qty").val();
-                if ($.isNumeric(now)){
-                    $(".qty").val(parseInt(now)+1);
-                }
-            });
-    });
+<section id="products" class="products">
+    <!-- Product Slot Example -->
+    <div class="product-slot" data-aos="fade-up">
+        <a href="product.html?product=iPhoneCaseGlitter">
+            <img src="images/product1-1.jpg" alt="iPhone Case Glitter">
+            <h2>iPhone Case Glitter</h2>
+            <p>iPhone 13pro Max, 14pro Max, 15pro, 15pro Max, 16pro, 16pro Max, 17pro, 17pro Max</p>
+            <p>Price: 850 Tk</p>
+        </a>
+    </div>
+
+    <div class="product-slot" data-aos="fade-up" data-aos-delay="100">
+        <a href="product.html?product=17ProMaxCase">
+            <img src="images/product2-1.jpg" alt="17 pro max protective transparent case">
+            <h2>17 pro max protective transparent case</h2>
+            <p>Only 17 pro Max & 17 pro</p>
+            <p>Price: 899 Tk</p>
+        </a>
+    </div>
+
+    <div class="product-slot" data-aos="fade-up" data-aos-delay="200">
+        <a href="product.html?product=iPhoneClearCase">
+            <img src="images/product3-1.jpg" alt="iPhone Clear Case">
+            <h2>iPhone Clear Case</h2>
+            <p>iPhone 12pro Max, 13pro Max, 14, 14pro Max, 15pro, 15, 15+, 15pro Max, 16pro, 16pro Max, 17pro, 17, 17pro Max</p>
+            <p>Price: 750 Tk</p>
+        </a>
+    </div>
+
+    <div class="product-slot" data-aos="fade-up" data-aos-delay="300">
+        <a href="product.html?product=PremiumLuxuryCase">
+            <img src="images/product4-1.jpg" alt="Premium Luxury Brush Case For IPhone">
+            <h2>Premium Luxury Brush Case For IPhone</h2>
+            <p>iPhone 11-12 Pro Max 13-13 Pro -13 Pro Max 14-14 Pro -14 Pro Max 15-15 Pro -15 Pro Max 16-16 Pro -16 Pro Max Also 15 Plus /14 Plus</p>
+            <p>Price: 890 Tk</p>
+        </a>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>📞 Contact Us</h2>
+    <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: 01960559745</p>
+    <p><i class="fa-solid fa-phone"></i> Hotline: 01410301618</p>
+    <p><i class="fa-solid fa-headset"></i> Support: 01851921618</p>
+
+    <h2>📍 Location</h2>
+    <p>Hatirpool, Motaleb Plaza, Dhaka-1205</p>
+
+    <h2>💳 Payment Information</h2>
+    <p><i class="fa-solid fa-mobile-screen-button"></i> Bkash: 01851921618</p>
+    <p><i class="fa-solid fa-mobile-screen-button"></i> Nagad: 01851921618</p>
+    <p><i class="fa-solid fa-mobile-screen-button"></i> Rocket: 01851921618</p>
+</section>
+
+<footer>
+    <p>©️ 2025 Cover's Wave — All Rights Reserved.</p>
+</footer>
+
+<a href="https://wa.me/01960559745" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
