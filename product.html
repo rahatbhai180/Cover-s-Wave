@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Product Details</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details</title>
+<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 <body>
 
-<div id="product-container"></div>
+<div class="pd-wrap">
+  <div class="container">
+      <div class="heading-section">
+          <h2>Product Details</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="slider" class="owl-carousel product-slider"></div>
+          <div id="thumb" class="owl-carousel product-thumb"></div>
+        </div>
+        <div class="col-md-6">
+          <div class="product-dtl">
+            <div class="product-info">
+              <div class="product-name"></div>
+              <div class="product-price-discount"><span></span></div>
+            </div>
+            <p class="product-models"></p>
+            <div class="product-count">
+              <label for="size">Quantity</label>
+              <form action="#" class="display-flex">
+                <div class="qtyminus">-</div>
+                <input type="text" name="quantity" value="1" class="qty">
+                <div class="qtyplus">+</div>
+              </form>
+              <a href="#" class="round-black-btn" onclick="orderProduct()">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
-
 </body>
 </html>

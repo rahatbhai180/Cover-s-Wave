@@ -1,85 +1,34 @@
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #f5f5f5;
-}
+/* Reset & Base */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f7f7f7;color:#333;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 50px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000;}
+header .logo{width:150px;}
+header nav a{margin-left:25px;font-weight:600;transition:color .3s;}
+header nav a:hover{color:#007BFF;}
 
-.title {
-    text-align: center;
-    margin: 25px;
-}
+/* Products */
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;padding:50px;}
+.product-slot{background:#fff;padding:20px;border-radius:10px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,0.1);transition:transform .3s,box-shadow .3s;overflow:hidden;}
+.product-slot:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,0.2);}
+.product-slot img{width:100%;height:auto;border-radius:10px;margin-bottom:10px;}
+.product-slot h2{font-size:18px;margin-bottom:5px;}
+.product-slot p{margin-bottom:10px;font-size:14px;}
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
+/* Product Page */
+.pd-wrap{padding:40px 0;}
+.heading-section{text-align:center;margin-bottom:20px;}
+.product-dtl .product-info{margin-bottom:10px;}
+.product-dtl .product-name{font-size:22px;font-weight:500;}
+.product-dtl .product-price-discount{font-size:22px;font-weight:400;padding:10px 0;color:#000;}
+.product-count{margin-top:15px;}
+.product-count .qtyminus,.product-count .qtyplus{width:34px;height:34px;background:#212529;text-align:center;font-size:19px;line-height:36px;color:#fff;cursor:pointer;}
+.product-count .qtyminus{border-radius:3px 0 0 3px;}
+.product-count .qtyplus{border-radius:0 3px 3px 0;}
+.product-count .qty{width:60px;text-align:center;}
+.round-black-btn{border-radius:4px;background:#212529;color:#fff;padding:7px 45px;display:inline-block;margin-top:20px;border:solid 2px #212529;transition:all .5s;}
+.round-black-btn:hover{background:transparent;color:#212529;text-decoration:none;}
 
-.product-card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.product-card:hover {
-    transform: scale(1.03);
-}
-
-.product-card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* PRODUCT PAGE */
-.product-box {
-    padding: 20px;
-}
-
-.big-img {
-    width: 100%;
-    border-radius: 12px;
-}
-
-/* thumbnail */
-.small-imgs {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.small-imgs img {
-    width: 22%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
-
-.small-imgs img:hover {
-    border-color: #000;
-}
-
-.price-tag {
-    margin-top: 15px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.order-btn {
-    margin-top: 20px;
-    width: 100%;
-    padding: 15px;
-    background: green;
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
+/* Floating WhatsApp */
+.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;justify-content:center;align-items:center;font-size:28px;z-index:1000;transition:transform .3s;}
+.whatsapp-float:hover{transform:scale(1.1);}
