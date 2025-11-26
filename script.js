@@ -1,62 +1,56 @@
-// Home page: nothing fancy, slots link to product.html
+function openProduct(id) {
+    window.location.href = "product.html?id=" + id;
+}
 
-// Product page slider
-$(document).ready(function() {
-    var slider = $("#slider");
-    var thumb = $("#thumb");
-    var slidesPerPage = 4;
+const products = {
+    1: {
+        name: "iPhone Transparent Case",
+        price: 250,
+        models: ["iPhone 11", "iPhone 12", "iPhone 13"],
+        images: ["img/product1-1.jpg", "img/product1-2.jpg", "img/product1-3.jpg", "img/product1-4.jpg"]
+    },
+    2: {
+        name: "Samsung Rugged Armor",
+        price: 350,
+        models: ["A12", "A23", "A50", "A52"],
+        images: ["img/product2-1.jpg", "img/product2-2.jpg", "img/product2-3.jpg", "img/product2-4.jpg"]
+    },
 
-    slider.owlCarousel({
-        items: 1,
-        dots: false,
-        nav: false,
-        loop: true,
-        autoplay: false
-    }).on('changed.owl.carousel', syncPosition);
+    // SAME FORMAT → 10 PRODUCT COMPLETE
+};
 
-    thumb.owlCarousel({
-        items: slidesPerPage,
-        dots: false,
-        nav: true,
-        smartSpeed: 200,
-        slideBy: slidesPerPage
-    }).on('changed.owl.carousel', syncPosition2);
+function loadProduct() {
+    const url = new URLSearchParams(window.location.search);
+    const id = url.get("id");
+    const p = products[id];
 
-    function syncPosition(el) {
-        var count = el.item.count - 1;
-        var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-        if(current < 0) current = count;
-        if(current > count) current = 0;
-        thumb.find(".owl-item").removeClass("current").eq(current).addClass("current");
-    }
+    if (!p) return;
 
-    function syncPosition2(el){
-        var number = el.item.index;
-        slider.data('owl.carousel').to(number, 100, true);
-    }
+    document.getElementById("product-container").innerHTML = `
+        <div class="product-box">
+            <img class="big-img" id="mainImg" src="${p.images[0]}">
 
-    thumb.on("click", ".owl-item", function(e){
-        e.preventDefault();
-        var number = $(this).index();
-        slider.data('owl.carousel').to(number,300,true);
-    });
+            <div class="small-imgs">
+                ${p.images.map(img => `<img onclick="document.getElementById('mainImg').src='${img}'" src="${img}">`).join("")}
+            </div>
 
-    // Quantity buttons
-    $(".qtyminus").click(function(){
-        var now = $(".qty").val();
-        if($.isNumeric(now) && parseInt(now)-1>0) $(".qty").val(parseInt(now)-1);
-    });
-    $(".qtyplus").click(function(){
-        var now = $(".qty").val();
-        if($.isNumeric(now)) $(".qty").val(parseInt(now)+1);
-    });
-});
+            <h2>${p.name}</h2>
+            <p class="price-tag">Price: ${p.price} Tk</p>
 
-// Order button
-function orderProduct(){
-    var qty = $(".qty").val();
-    var productName = $(".product-name").text();
-    var price = $(".product-price-discount span").text();
-    var whatsappMsg = `আমি অর্ডার করতে চাই: ${productName}, Quantity: ${qty}, Price: ${price}`;
-    window.open(`https://wa.me/01960559745?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+            <h3>Available Models:</h3>
+            <ul>${p.models.map(m => `<li>${m}</li>`).join("")}</ul>
+
+            <button class="order-btn" onclick="orderNow('${p.name}', ${p.price})">Order Now</button>
+        </div>
+    `;
+}
+
+function orderNow(name, price) {
+    const phone = "01960559745";
+    const msg = `Hello, I want to order:\n${name}\nPrice: ${price} Tk`;
+    window.location.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+}
+
+if (window.location.pathname.includes("product.html")) {
+    loadProduct();
 }

@@ -1,85 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cover's Wave</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Covers Wave</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <img src="logo/logo.png" alt="Logo" class="logo">
-    <p>Your Trusted Phone Case Store</p>
-    <nav>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<h1 class="title">📱 Covers Wave – Premium Phone Cases</h1>
 
-<section id="products" class="products">
-    <!-- Product Slot Example -->
-    <div class="product-slot" data-aos="fade-up">
-        <a href="product.html?product=iPhoneCaseGlitter">
-            <img src="images/product1-1.jpg" alt="iPhone Case Glitter">
-            <h2>iPhone Case Glitter</h2>
-            <p>iPhone 13pro Max, 14pro Max, 15pro, 15pro Max, 16pro, 16pro Max, 17pro, 17pro Max</p>
-            <p>Price: 850 Tk</p>
-        </a>
+<div class="product-grid">
+
+    <!-- SLOT TEMPLATE (10 slots) -->
+    <div class="product-card" onclick="openProduct(1)">
+        <img src="img/product1-1.jpg" alt="Product 1">
+        <h3>iPhone Transparent Case</h3>
+        <p class="price">Price: 250 Tk</p>
     </div>
 
-    <div class="product-slot" data-aos="fade-up" data-aos-delay="100">
-        <a href="product.html?product=17ProMaxCase">
-            <img src="images/product2-1.jpg" alt="17 pro max protective transparent case">
-            <h2>17 pro max protective transparent case</h2>
-            <p>Only 17 pro Max & 17 pro</p>
-            <p>Price: 899 Tk</p>
-        </a>
+    <div class="product-card" onclick="openProduct(2)">
+        <img src="img/product2-1.jpg" alt="Product 2">
+        <h3>Samsung Rugged Armor</h3>
+        <p class="price">Price: 350 Tk</p>
     </div>
 
-    <div class="product-slot" data-aos="fade-up" data-aos-delay="200">
-        <a href="product.html?product=iPhoneClearCase">
-            <img src="images/product3-1.jpg" alt="iPhone Clear Case">
-            <h2>iPhone Clear Case</h2>
-            <p>iPhone 12pro Max, 13pro Max, 14, 14pro Max, 15pro, 15, 15+, 15pro Max, 16pro, 16pro Max, 17pro, 17, 17pro Max</p>
-            <p>Price: 750 Tk</p>
-        </a>
+    <div class="product-card" onclick="openProduct(3)">
+        <img src="img/product3-1.jpg" alt="Product 3">
+        <h3>iPhone MagSafe Case</h3>
+        <p class="price">Price: 550 Tk</p>
     </div>
 
-    <div class="product-slot" data-aos="fade-up" data-aos-delay="300">
-        <a href="product.html?product=PremiumLuxuryCase">
-            <img src="images/product4-1.jpg" alt="Premium Luxury Brush Case For IPhone">
-            <h2>Premium Luxury Brush Case For IPhone</h2>
-            <p>iPhone 11-12 Pro Max 13-13 Pro -13 Pro Max 14-14 Pro -14 Pro Max 15-15 Pro -15 Pro Max 16-16 Pro -16 Pro Max Also 15 Plus /14 Plus</p>
-            <p>Price: 890 Tk</p>
-        </a>
+    <div class="product-card" onclick="openProduct(4)">
+        <img src="img/product4-1.jpg" alt="Product 4">
+        <h3>Xiaomi Soft Silicone</h3>
+        <p class="price">Price: 200 Tk</p>
     </div>
-</section>
 
-<section id="contact" class="contact">
-    <h2>📞 Contact Us</h2>
-    <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: 01960559745</p>
-    <p><i class="fa-solid fa-phone"></i> Hotline: 01410301618</p>
-    <p><i class="fa-solid fa-headset"></i> Support: 01851921618</p>
+    <div class="product-card" onclick="openProduct(5)">
+        <img src="img/product5-1.jpg" alt="Product 5">
+        <h3>Realme Glitter Cover</h3>
+        <p class="price">Price: 300 Tk</p>
+    </div>
 
-    <h2>📍 Location</h2>
-    <p>Hatirpool, Motaleb Plaza, Dhaka-1205</p>
+    <div class="product-card" onclick="openProduct(6)">
+        <img src="img/product6-1.jpg" alt="Product 6">
+        <h3>Oppo Shockproof</h3>
+        <p class="price">Price: 280 Tk</p>
+    </div>
 
-    <h2>💳 Payment Information</h2>
-    <p><i class="fa-solid fa-mobile-screen-button"></i> Bkash: 01851921618</p>
-    <p><i class="fa-solid fa-mobile-screen-button"></i> Nagad: 01851921618</p>
-    <p><i class="fa-solid fa-mobile-screen-button"></i> Rocket: 01851921618</p>
-</section>
+    <div class="product-card" onclick="openProduct(7)">
+        <img src="img/product7-1.jpg" alt="Product 7">
+        <h3>Vivo Crystal Cover</h3>
+        <p class="price">Price: 230 Tk</p>
+    </div>
 
-<footer>
-    <p>©️ 2025 Cover's Wave — All Rights Reserved.</p>
-</footer>
+    <div class="product-card" onclick="openProduct(8)">
+        <img src="img/product8-1.jpg" alt="Product 8">
+        <h3>Nokia Hybrid Case</h3>
+        <p class="price">Price: 260 Tk</p>
+    </div>
 
-<a href="https://wa.me/01960559745" target="_blank" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
-</a>
+    <div class="product-card" onclick="openProduct(9)">
+        <img src="img/product9-1.jpg" alt="Product 9">
+        <h3>Pixel Matte Finish</h3>
+        <p class="price">Price: 400 Tk</p>
+    </div>
+
+    <div class="product-card" onclick="openProduct(10)">
+        <img src="img/product10-1.jpg" alt="Product 10">
+        <h3>Samsung Clear Bumper</h3>
+        <p class="price">Price: 320 Tk</p>
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
